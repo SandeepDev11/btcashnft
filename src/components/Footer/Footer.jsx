@@ -16,7 +16,7 @@ const Footer = () => {
                 Got a question about BTCASH NFT? Get in touch with our friendly
                 staff.
               </p>
-              <div className="py-5">
+              <div className="pt-5">
                 <form onClick={handleForm} className="supportForm">
                   <input type="email" placeholder="Enter Your Email ID" />
                   <button className="authText submitBtn py-3 px-5 border-0">
