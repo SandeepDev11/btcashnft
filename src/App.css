@@ -256,69 +256,195 @@ a {
   font-size: 16px !important;
 }
 
-.winner-box-wrapper{
-    background-color: var(--box);
-    border-radius: 0.8rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding:1rem 2rem;
-    position: relative;
-    &:hover{
-        background-color: var(--inputColor);
-    }
+.winner-box-wrapper {
+  background-color: var(--box);
+  border-radius: 0.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: relative;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--inputColor);
+  }
 }
 
-.winnerImg-wrapper{
-    max-width: 120px;
-    height: 80px;
-    border-radius: 0.5rem;
-    overflow: hidden;
+.winnerImg-wrapper {
+  max-width: 120px;
+  height: 80px;
+  border-radius: 0.5rem;
+  overflow: hidden;
 }
-.winnerImg-wrapper img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.onHoverWinnerDetails{
-    margin: auto;
-    width: 350px;
-    border-radius:1rem;
-    text-align: center;
-    overflow: hidden;
-    background-color:rgb(80, 80, 80);
-    z-index: 99;
+.winnerImg-wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
-.winnerDetialsTop{
-    height: 150px;
-    overflow: hidden;
+.onHoverWinnerDetails {
+  margin: auto;
+  width: 350px;
+  border-radius: 1rem;
+  text-align: center;
+  overflow: hidden;
+  background-color: rgb(80, 80, 80);
+  z-index: 99;
 }
-.winnerDetialsTop img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
+
+.winnerDetialsTop {
+  height: 150px;
+  overflow: hidden;
+}
+.winnerDetialsTop img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
 }
 
 .winnerUser {
-    position: relative;
-    top:-2rem;
+  position: relative;
+  top: -2rem;
 }
 
-.winnerUser img{
-    height: 80px;
-    width: 80px;
-    object-fit: cover;
-    border-radius: 80px;
-    object-position: top;
+.winnerUser img {
+  height: 80px;
+  width: 80px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 80px;
+  -o-object-position: top;
+  object-position: top;
 }
 
-.winnermodal .modal-dialog .modal-content{
-    background: transparent !important;
+.winnermodal .modal-dialog .modal-content {
+  background: transparent !important;
 }
 
-.modal-backdrop{
-    opacity: 0.8 !important;
+.modal-backdrop {
+  opacity: 0.8 !important;
+}
+
+.playCard {
+  background: #252525;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.playIcon {
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.playIcon svg {
+  font-size: 3rem;
+}
+
+.playContent p {
+  line-height: 1.5rem;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.playIcon span {
+  background: var(--inputColor);
+  border-radius: 0.5rem;
+  padding: 0.3rem;
+}
+
+.playCard:hover {
+  background: var(--inputColor);
+  transform: translateY(-10px);
+  transition: all 0.3s ease-in-out;
+}
+
+.featuresCard {
+  background: var(--box);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.featureBanner {
+  max-height: 200px;
+  overflow: hidden;
+}
+
+.featureBanner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featureContent {
+  padding: 1.5rem 1.5rem;
+}
+
+footer {
+  background: var(--box);
+  padding: 8rem 0;
+}
+
+.getInTouch-wrapper {
+  text-align: center;
+}
+
+.supportForm {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+form.supportForm input {
+  padding: 1.1rem 1.2rem;
+  border-radius: 1rem;
+  width: 450px;
+  background-color: var(--inputColor) !important;
+  color: var(--light) !important;
+  border: transparent;
+  outline: none !important;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  -webkit-transition: background-color 0.2s cubic-bezier(0.05, 0, 0.2, 1),
+    border-color 0.2s cubic-bezier(0.05, 0, 0.2, 1);
+  -o-transition: background-color 0.2s cubic-bezier(0.05, 0, 0.2, 1),
+    border-color 0.2s cubic-bezier(0.05, 0, 0.2, 1);
+  transition: background-color 0.2s cubic-bezier(0.05, 0, 0.2, 1),
+    border-color 0.2s cubic-bezier(0.05, 0, 0.2, 1);
+  border-radius: 0.8rem;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  &:focus {
+    background-color: var(--inputHover) !important;
+  }
+}
+
+form.supportForm input::placeholder {
+  color: var(--light);
+}
+
+.submitBtn {
+  background-color: var(--light);
+  color: var(--box);
+  text-transform: uppercase;
+  &:hover {
+    color: var(--light);
+  }
+}
+
+.getInTouch-wrapper p {
+  font-size: 14px;
 }

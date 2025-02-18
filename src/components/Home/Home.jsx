@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Button, Col, Container, Modal, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -11,6 +10,10 @@ import boxImg from "../../assets/Images/boxImg.jpg";
 import { Link } from "react-router";
 import BoxImg from "./BoxImg";
 import bannerImg from "../../assets/Images/banner.jpg";
+import WinnerList from "./WinnerList";
+import { PiSelectionAllFill } from "react-icons/pi";
+import PlayCard from "./PlayCard";
+import FeaturesCard from "./FeaturesCard";
 
 const Home = () => {
   const banner = [
@@ -79,9 +82,88 @@ const Home = () => {
     },
   ];
 
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const winnerData = [
+    {
+      winnerEmail: "rahu***@gmail.com",
+      winnerImg: shortImg,
+      winnerNumber: 5421,
+      modalBanner: bannerImg,
+      priceWinner: 5421,
+      contestDetails: "rahiu=f s kasdjflka",
+      usdtNum: 23454,
+      winningNum: 985748,
+      winnerName: "MemnexOS",
+    },
+    {
+      winnerEmail: "rahu***@gmail.com",
+      winnerImg: shortImg,
+      winnerNumber: 5421,
+      modalBanner: bannerImg,
+      priceWinner: 5421,
+      contestDetails: "rahiu=f s kasdjflka",
+      usdtNum: 23454,
+      winningNum: 985748,
+      winnerName: "MemnexOS",
+    },
+    {
+      winnerEmail: "rahu***@gmail.com",
+      winnerImg: shortImg,
+      winnerNumber: 5421,
+      modalBanner: bannerImg,
+      priceWinner: 5421,
+      contestDetails: "rahiu=f s kasdjflka",
+      usdtNum: 23454,
+      winningNum: 985748,
+      winnerName: "MemnexOS",
+    },
+  ];
+
+  const playData = [
+    {
+      playicon: <PiSelectionAllFill />,
+      playnum: "01.",
+      playtitle: "Make a selection",
+      playdec:
+        "To participate in NFT bidding, first, register for BT and get access to all available contests. Once you're registered, browse through the exciting range of contests we have to offer. Finally, choose the contest that catches your interest and get ready to bid!",
+    },
+    {
+      playicon: <PiSelectionAllFill />,
+      playnum: "01.",
+      playtitle: "Make a selection",
+      playdec:
+        "To participate in NFT bidding, first, register for BT and get access to all available contests. Once you're registered, browse through the exciting range of contests we have to offer. Finally, choose the contest that catches your interest and get ready to bid!",
+    },
+    {
+      playicon: <PiSelectionAllFill />,
+      playnum: "01.",
+      playtitle: "Make a selection",
+      playdec:
+        "To participate in NFT bidding, first, register for BT and get access to all available contests. Once you're registered, browse through the exciting range of contests we have to offer. Finally, choose the contest that catches your interest and get ready to bid!",
+    },
+  ];
+
+  const featuresCards = [
+    {
+      featureImg: bannerImg,
+      title: "Real-Time",
+      para: "Real-Time Bidding allows users to place bids on items in real-time and also provides an engaging and competitive experience for players",
+    },
+    {
+      featureImg: bannerImg,
+      title: "Proxy",
+      para: "Proxy Bidding allows helps users avoid overspending while still staying competitive in the auction.",
+    },
+    {
+      featureImg: bannerImg,
+      title: "Automated",
+      para: "Automated Bidding is designed for convenience, allowing users to participate in auctions without constantly monitoring the process.",
+    },
+    {
+      featureImg: bannerImg,
+      title: "Tracking",
+      para: "Bid Tracking and Notifications provide users with real-time updates on the status of their bids.",
+    },
+  ];
 
   return (
     <main>
@@ -277,85 +359,67 @@ const Home = () => {
             <h3>Hall of Champions: Winners List</h3>
           </div>
           <Row>
-            <Col lg={4}>
-              <div className="winner-box-wrapper" onClick={handleShow}>
-                <div>
-                  <h5 className="mb-0">Mem***XOS</h5>
-                </div>
-                <div className="winnerImg-wrapper">
-                  <img src={boxImg} alt="" />
-                </div>
-                <div>
-                  <span>Received 5465 BNB</span>
-                </div>
-              </div>
-            </Col>
-            <Col lg={4}>
-              <div className="winner-box-wrapper" onClick={handleShow}>
-                <div>
-                  <h5 className="mb-0">Mem***XOS</h5>
-                </div>
-                <div className="winnerImg-wrapper">
-                  <img src={boxImg} alt="" />
-                </div>
-                <div>
-                  <span>Received 5465 BNB</span>
-                </div>
-              </div>
-            </Col>
-            <Col lg={4}>
-              <div className="winner-box-wrapper" onClick={handleShow}>
-                <div>
-                  <h5 className="mb-0">Mem***XOS</h5>
-                </div>
-                <div className="winnerImg-wrapper">
-                  <img src={boxImg} alt="" />
-                </div>
-                <div>
-                  <span>Received 5465 BNB</span>
-                </div>
-              </div>
-            </Col>
-            {/* Modal */}
-            <Modal
-              show={show}
-              onHide={handleClose}
-              className="winnermodal"
-              centered
-            >
-              <Modal.Body>
-                <>
-                  <Modal.Header closeButton className="border-0"></Modal.Header>
-                  <div className="onHoverWinnerDetails">
-                    <div className="winnerDetialsTop">
-                      <img src={bannerImg} alt="" />
-                    </div>
-                    <div className="winnerUser">
-                      <img src={shortImg} alt="" />
-                      <h5>MemnexOS</h5>
-                    </div>
-                    <div className="winnerUserDetails p-3 pt-0">
-                      <h4>1st Price Winner</h4>
-                      <p>Contest: Solitaire by Terrell J…</p>
-                      <div className="d-flex justify-content-between text-start">
-                        <div>
-                          <span>Prize</span>
-                          <h6>500 USDT</h6>
-                        </div>
-                        <div>
-                          <span>Winning Number</span>
-                          <h6>#27627178</h6>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </>
-              </Modal.Body>
-            </Modal>
+            {winnerData.map((elem, index) => (
+              <>
+                <Col lg={4} key={index}>
+                  <WinnerList winnerData={elem} />
+                </Col>
+              </>
+            ))}
           </Row>
         </Container>
       </section>
 
+      <section className="winners-list-wrapper mb-5">
+        <Container fluid>
+          <div className="winner-list-title mb-4">
+            <h3>Completed Bid</h3>
+          </div>
+          <Row>
+            {winnerData.map((elem, index) => (
+              <>
+                <Col lg={4} key={index}>
+                  <WinnerList winnerData={elem} />
+                </Col>
+              </>
+            ))}
+          </Row>
+        </Container>
+      </section>
+
+      <section className="howPlay-wrapper mb-5">
+        <Container fluid>
+          <div className="howPlay-title mb-4">
+            <h3>How to Play</h3>
+          </div>
+          <Row>
+            {playData.map((data, index) => (
+              <>
+                <Col lg={4} key={index}>
+                  <PlayCard playData={data} />
+                </Col>
+              </>
+            ))}
+          </Row>
+        </Container>
+      </section>
+
+      <section className="features-wrapper mb-5">
+        <Container fluid>
+          <div className="howPlay-title mb-4">
+            <h3>Our Features</h3>
+          </div>
+          <Row>
+            {featuresCards.map((data, index) => (
+              <>
+                <Col lg={3} key={index}>
+                  <FeaturesCard featuresCards={data} />
+                </Col>
+              </>
+            ))}
+          </Row>
+        </Container>
+      </section>
     </main>
   );
 };
